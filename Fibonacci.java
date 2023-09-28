@@ -29,18 +29,24 @@ public class Fibonacci {
             System.out.println("Generando los primeros " + n + " números de Fibonacci:");
 
             // Versión recursiva
+            long startTimeRecurs = System.nanoTime();
             System.out.print("Versión Recursiva: ");
             for (int i = 0; i < n; i++) {
                 System.out.print(fibRecurs(i) + " ");
             }
-            System.out.println();
+            long endTimeRecurs = System.nanoTime();
+            long durationRecurs = endTimeRecurs - startTimeRecurs; // Tiempo en nanosegundos
+            System.out.println("\nTiempo Recursivo: " + durationRecurs + " ns");
 
             // Versión iterativa
+            long startTimeIter = System.nanoTime();
             System.out.print("Versión Iterativa: ");
             for (int i = 0; i < n; i++) {
                 System.out.print(fibIter(i) + " ");
             }
-            System.out.println();
+            long endTimeIter = System.nanoTime();
+            long durationIter = endTimeIter - startTimeIter; // Tiempo en nanosegundos
+            System.out.println("\nTiempo Iterativo: " + durationIter + " ns");
 
             System.out.println();
         }
